@@ -66,7 +66,7 @@ class StringManipulations:
                 for j in range(len(c)):
                     if s[i + j] != c[j]:
                         passed = False
-                if passed == True:
+                if passed:
                     return i
         return -1
 
