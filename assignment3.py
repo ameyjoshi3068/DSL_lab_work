@@ -77,10 +77,10 @@ class Matrix:
             for a in range(self.i):
                 tmp = []
                 for b in range(other.j):
-                    count = 0
+                    sum = 0
                     for c in range(other.j):
-                        count += self.matrix[a][c] * tp.matrix[b][c]
-                    tmp.append(count)
+                        sum += self.matrix[a][c] * tp.matrix[b][c]
+                    tmp.append(sum)
                 ans.append(tmp)
 
             m = Matrix(matrix=ans)
@@ -89,15 +89,26 @@ class Matrix:
             print("Matrices having invalid number of rows and columns for multiplication")
 
 
-i = int(input("Enter the number of rows in A: "))
-j = int(input("Enter the number of columns in A: "))
+while True:
+    try:
+        i = int(input("Enter the number of rows in A: "))
+        j = int(input("Enter the number of columns in A: "))
+        break
+    except ValueError:
+        print("Invalid Number \n\n")
 print("Enter the elements for matrix A")
+
 a = Matrix()
 a.set_matrix(i, j)
 print()
-i = int(input("Enter the number of rows in B: "))
-j = int(input("Enter the number of columns in B: "))
-print("Enter the elements for matrix A")
+while True:
+    try:
+        i = int(input("Enter the number of rows in B: "))
+        j = int(input("Enter the number of columns in B: "))
+        break
+    except ValueError:
+        print("Invalid Number \n\n")
+print("Enter the elements for matrix B")
 b = Matrix()
 b.set_matrix(i, j)
 
@@ -123,7 +134,7 @@ while index != 0:
         print()
     elif index == 2:
         print("Subtraction of A and B is")
-        print(a + b)
+        print(a - b)
         print()
     elif index == 3:
         print("Multiplication of matrices A and B is")
