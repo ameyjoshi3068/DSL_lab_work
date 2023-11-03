@@ -77,10 +77,10 @@ class Matrix:
             for a in range(self.i):
                 tmp = []
                 for b in range(other.j):
-                    sum = 0
+                    sum1 = 0
                     for c in range(other.j):
-                        sum += self.matrix[a][c] * tp.matrix[b][c]
-                    tmp.append(sum)
+                        sum1 += self.matrix[a][c] * tp.matrix[b][c]
+                    tmp.append(sum1)
                 ans.append(tmp)
 
             m = Matrix(matrix=ans)
@@ -98,8 +98,8 @@ while True:
         print("Invalid Number \n\n")
 print("Enter the elements for matrix A")
 
-a = Matrix()
-a.set_matrix(i, j)
+A = Matrix()
+A.set_matrix(i, j)
 print()
 while True:
     try:
@@ -109,8 +109,8 @@ while True:
     except ValueError:
         print("Invalid Number \n\n")
 print("Enter the elements for matrix B")
-b = Matrix()
-b.set_matrix(i, j)
+B = Matrix()
+B.set_matrix(i, j)
 
 index = 9
 
@@ -130,18 +130,18 @@ while index != 0:
 
     if index == 1:
         print("Addition of A and B is")
-        print(a + b)
+        print(A + B)
         print()
     elif index == 2:
         print("Subtraction of A and B is")
-        print(a - b)
+        print(A - B)
         print()
     elif index == 3:
         print("Multiplication of matrices A and B is")
-        print(a * b)
+        print(A * B)
         print()
     elif index == 4:
-        print("Transpose of A is:\n", a.transpose(), "\nTranspose of B is:\n", b.transpose(), sep="")
+        print("Transpose of A is:\n", A.transpose(), "\nTranspose of B is:\n", B.transpose(), sep="")
         print()
     elif index == 0:
         break

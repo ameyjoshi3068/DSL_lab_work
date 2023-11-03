@@ -1,0 +1,30 @@
+while (tmpnode) {
+					newNode = new ListNode(tmpnode->studRollNo);
+					if (!ans->head) {
+						ans->head = newNode;
+						prevnode = ans->head;
+					} else {
+						prevnode->next = newNode;
+						prevnode = newNode;
+					}
+					tmpnode = tmpnode->next;
+
+				}
+				while (tmpnode2) {
+					tmpnode = ans->head;
+					prevnode=NULL;
+					while (tmpnode) {
+						if (tmpnode->studRollNo == tmpnode2->studRollNo) {
+							if(!prevnode){
+								ans->head=ans->head->next;
+							}
+							else{
+								prevnode->next=tmpnode->next;
+								delete tmpnode;
+							}
+						}
+						prevnode=tmpnode;
+						tmpnode = tmpnode->next;
+					}
+					tmpnode2=tmpnode2->next;
+				}
